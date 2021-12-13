@@ -1,0 +1,10 @@
+#!/bin/sh
+
+while read file
+do
+  case "$1" in
+  "w") cp $file ~/.config/wallpapers.png && wal -i $file && xwallpaper --zoom $file ;;
+  "m") cp $file ~/.config/wallpapers ;;
+  "d") mv $file ~/.cache/.trash/ ;;
+  esac
+done
