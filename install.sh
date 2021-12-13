@@ -16,7 +16,10 @@ if [ "`whoami`" = "root" ]; then
         # Updating the system and installing some packages
         cp sources.list /etc/apt/sources.list
         sudo apt-get update -y && sudo apt-get upgrade -y
-        sudo apt-get install zip unzip git bspwm sxhkd xorg pulseaudio flameshot neofetch fonts-noto-color-emoji fonts-font-awesome libqt5svg5 lxpolkit dunst kitty polybar neovim zsh pcmanfm pulsemixer -y
+        sudo apt-get install zip unzip git bspwm sxhkd xorg pulseaudio flameshot neofetch fonts-noto-color-emoji fonts-font-awesome libqt5svg5 lxpolkit dunst kitty polybar neovim zsh pcmanfm pulsemixer texlive-full gimp -y
+        cd dots
+        cp -r * /home/$USER
+        cp -r .* /home/$USER
     else
         echo "Input must be 'y' to use the script.\n"
     fi
