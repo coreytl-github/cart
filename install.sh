@@ -15,11 +15,12 @@ if [ "`whoami`" = "root" ]; then
         echo "Updating system\n\n"
         # Updating the system and installing some packages
         cp sources.list /etc/apt/sources.list
-        sudo apt-get update -y && sudo apt-get upgrade -y
-        sudo apt-get install zip unzip git bspwm sxhkd xorg pulseaudio flameshot neofetch fonts-noto-color-emoji fonts-font-awesome libqt5svg5 lxpolkit dunst kitty polybar neovim zsh pcmanfm pulsemixer texlive-full gimp -y
+        apt-get update -y && apt-get upgrade -y
+        apt-get install sudo zip unzip git bspwm sxhkd xorg pulseaudio flameshot neofetch fonts-noto-color-emoji fonts-font-awesome libqt5svg5 lxpolkit dunst kitty polybar neovim zsh pcmanfm pulsemixer texlive-full gimp -y
         cd dots
         cp -r * /home/$USER
         cp -r .* /home/$USER
+        echo "$USER ALL=(ALL:ALL) ALL" >> /etc/sudoers
     else
         echo "Input must be 'y' to use the script.\n"
     fi
